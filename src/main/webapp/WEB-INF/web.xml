@@ -1,0 +1,96 @@
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>Order Management Web Application</display-name>
+
+	<listener>
+   		<listener-class>com.datastax.order.demo.Main</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.datastax.bootcamp.rest</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Charting -->
+	<servlet>
+		<servlet-name>DayBarChartServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.DayBarChartServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>DayHourBarChartServlet</servlet-name>
+		<url-pattern>/daychart</url-pattern>
+	</servlet-mapping>
+
+	<!-- Charting -->
+	<servlet>
+		<servlet-name>DayHourBarChartServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.DayHourBarChartServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>DayHourBarChartServlet</servlet-name>
+		<url-pattern>/dayhourchart</url-pattern>
+	</servlet-mapping>
+
+	<!-- Charting -->
+	<servlet>
+		<servlet-name>DayMinuteBarChartServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.DayMinuteBarChartServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>DayMinuteBarChartServlet</servlet-name>
+		<url-pattern>/dayminutechart</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Tables -->
+	<servlet>
+		<servlet-name>ProductOrderUserTableServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.ProductOrderUserTableServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>ProductOrderUserTableServlet</servlet-name>
+		<url-pattern>/usertable</url-pattern>
+	</servlet-mapping>
+
+	<!-- Tables -->
+	<servlet>
+		<servlet-name>ProductOrderVendorTableServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.ProductOrderVendorTableServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>ProductOrderVendorTableServlet</servlet-name>
+		<url-pattern>/vendortable</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Dashboard -->
+	<servlet>
+		<servlet-name>DashboardServlet</servlet-name>
+		<servlet-class>com.datastax.order.demo.servlet.DashboardServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>DashboardServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>

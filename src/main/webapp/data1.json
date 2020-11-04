@@ -1,0 +1,9 @@
+{
+  "cols" : [ 
+  		{"id" : "id", "label" : "heading1","type" : "string" }, 
+    	{"id" : "id","label" : "heading2", "type" : "number"}
+    ],
+  "rows" : [ 
+  		{"c" : [ {"v" : "Mursa","f" : null}, {"v" : "2","f" : null} ]} 
+  		]
+}

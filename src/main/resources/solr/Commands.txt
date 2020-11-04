@@ -1,0 +1,11 @@
+//Add the SolrConfig
+curl http://192.168.25.146:8983/solr/resource/order_management.users/solrconfig.xml --data-binary @solrconfig.xml -H 'Content-type:text/xml; charset=utf-8'
+
+//Add the Schema
+curl http://192.168.25.146:8983/solr/resource/order_management.users/schema.xml --data-binary @user_search_schema.xml -H 'Content-type:text/xml; charset=utf-8'
+
+//Create the Solr Core.
+curl "http://192.168.25.146:8983/solr/admin/cores?action=CREATE&name=order_management.users"
+
+//Connect to the Solr web app.
+http://192.168.25.146:8983/solr/

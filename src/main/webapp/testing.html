@@ -1,0 +1,37 @@
+<html>
+<head>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript'>
+google.load('visualization', '1', {packages:['corechart']})
+google.setOnLoadCallback(drawChart)
+
+function drawChart() {
+var data1383247891354 = google.visualization.arrayToDataTable([
+['hour', 'value'],
+['1', 32],
+['2', 37],
+['3', 35],
+['4', 36],
+['5', 38]]);
+var options1383247891355= {
+title: 'My Lovely Chart',
+is3D: true,
+vAxis: {title: 'Hours',  titleTextStyle: {color: 'green'}}
+};
+var chart1383247891355= new google.visualization.BarChart(document.getElementById('mydiv1'));
+chart1383247891355.draw(data1383247891354,options1383247891355);
+var chart1383247891355= new google.visualization.PieChart(document.getElementById('mydiv2'));
+chart1383247891355.draw(data1383247891354,options1383247891355);
+var chart1383247891355= new google.visualization.ColumnChart(document.getElementById('mydiv3'));
+chart1383247891355.draw(data1383247891354,options1383247891355);
+}
+
+
+</script>
+</head>
+<body>
+<div id='mydiv1' style='width: 900px; height: 500px;'></div>
+<div id='mydiv2' style='width: 900px; height: 500px;'></div>
+<div id='mydiv3' style='width: 900px; height: 500px;'></div>
+</body>
+</html>

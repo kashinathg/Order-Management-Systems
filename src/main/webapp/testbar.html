@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript'>
+google.load('visualization', '1', {packages:['corechart', 'table']})
+google.setOnLoadCallback(drawChart)
+
+function drawChart() {
+var data1383716339759 = google.visualization.arrayToDataTable([
+['hour', 'value'],
+[0, 14532],
+[1, 7374],
+[2, 7231],
+[3, 7315],
+[4, 7202],
+[5, 7148],
+[6, 7206],
+[7, 7114],
+[8, 7220],
+[9, 7263],
+[10, 7281],
+[11, 7136],
+[13, 7071],
+[14, 7152],
+[15, 7023],
+[16, 7167],
+[17, 7293],
+[18, 7274],
+[19, 7284],
+[20, 7143],
+[21, 7255],
+[22, 7141]]);
+var options1383716339759= {
+title: 'Orders per hour',
+is3D: true,
+vAxis: {title: 'Hours',  titleTextStyle: {color: 'green'}}
+};
+var chart1383716339759= new google.visualization.ColumnChart(document.getElementById('mydiv1'));
+chart1383716339759.draw(data1383716339759,options1383716339759);
+};
+</script>
+</head>
+<body>
+<div id='mydiv1' style='width: 1000px; height: 600px;'></div>
+</body>
+</html>
